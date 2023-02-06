@@ -47,7 +47,9 @@ const FavoritePage = () =>{
                                     filtered.map(film =>
                                         <div key={film.id} className={styles.filmLib}>
                                             <Link to={`/film/${film.id}/${film.name}`}>
-                                                <img key={film.id} src={film.img} width='350' alt={film.name}/>
+                                                <div key={film.id}  className={styles.main} style={{backgroundImage: `url(${film.img})`, width: '350px'}}>
+                                                    <div className={styles.rating} style={{backgroundColor: film.rating > 7 ? '#02ad02' : '#7c7b7b'}}>{film.rating}</div>
+                                                </div>
                                                 <span style={{marginTop: '1rem'}}>{film.rusName}</span>
                                             </Link>
                                         </div>

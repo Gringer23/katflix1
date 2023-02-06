@@ -37,7 +37,6 @@ const Episodes = ({movie, id}) => {
         setItems(res);
     },[]);
 
-    console.log(items);
 
     return(
         <div className={style.backEpisode}>

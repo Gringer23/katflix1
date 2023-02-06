@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Header from "../../elements/Header/Header";
+import ReactPlayer from "react-player";
 
 
 const VideoPlayerFilm = () => {
@@ -14,7 +15,7 @@ const VideoPlayerFilm = () => {
     return (
         <>
             <Header/>
-            <iframe autoPlay type="video/webm" src={film.video} width={'100%'} height={'632px'} frameBorder={'0px'}/>
+           <ReactPlayer pip={true} playing={false} controls={true} width='100%' height='630px' url={`${film.video}`} volume={0.5}/>
         </>
     )
 

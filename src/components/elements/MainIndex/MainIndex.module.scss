@@ -1,33 +1,47 @@
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: row;
-  animation: opacity .6s ;
+  animation: opacity .6s;
 
-  .film{
+  .film {
     display: inline-flex;
-  }
 
-  .filmLib {
-    display: flex;
-    margin: 20px;
-    cursor: pointer;
-    animation: opacity .6s;
+    .main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 200px;
+      transition: 0.8s;
 
-    > a {
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-
-      > img {
-        transition: 0.8s;
-
-        &:hover {
-          transform: scale(1.2);
-        }
+      &:hover{
+        transform: scale(1.1);
       }
 
-      > span {
+      .rating {
         color: #fff;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0 0 5px;
+        border-radius: 20px;
+      }
+    }
+
+    .filmLib {
+      display: flex;
+      margin: 20px;
+      cursor: pointer;
+      animation: opacity .6s;
+
+      > a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+
+        > span {
+          color: #fff;
+        }
       }
     }
   }

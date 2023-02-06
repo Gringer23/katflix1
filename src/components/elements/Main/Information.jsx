@@ -14,7 +14,8 @@ const Information = ({movie, favoriteFilm, setFavoriteFilm}) => {
             [movie.id]: {
                 name: movie.rusName,
                 img: movie.mainImage,
-                rusName: movie.rusName
+                rusName: movie.rusName,
+                rating: movie.rating
             }
         }));
         setFavoriteFilm(true);
@@ -41,7 +42,9 @@ const Information = ({movie, favoriteFilm, setFavoriteFilm}) => {
                     display: 'flex',
                     alignItems: 'center'
                 }}>{movie.rating}</span>
-                <span>{movie.series}</span>
+                {
+                    movie.series ? <span>{movie.series}</span> : ''
+                }
                 <span>{movie.duration}</span>
             </div>
 
