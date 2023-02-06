@@ -1,0 +1,79 @@
+@import '../../../_variables';
+
+
+
+.backEpisode{
+  animation: opacity .7s;
+  z-index: 0;
+  position: relative;
+  height: 100%;
+  padding: 0 20px 0 20px;
+
+
+
+  .episodes {
+  display: flex;
+  margin: 2rem 0 0 1rem;
+  flex-direction: row;
+  overflow: hidden;
+  padding: 5% 0 2rem 0;
+  width: 95%;
+
+
+    .buttonSlider {
+    z-index: 2;
+    font-size: 40px;
+    position: absolute;
+    border: none;
+
+      >button{
+      position: relative;
+      border: none;
+      width: 40px;
+      height: 197px;
+      background-color: #2a2a2c;
+      margin-right: -0.1rem;
+
+        &:hover{
+        background-image: linear-gradient(to left, #0d1011, transparent);
+      }
+
+    }
+  }
+
+    .episodeLi{
+      display: flex;
+      margin-left: 2.2rem;
+
+      >.episode_translition{
+        transition: translate;
+        transition-property: transform;
+        transition-duration: .4s;
+        transition-timing-function: ease-in-out;
+      }
+
+  }
+
+
+
+    .episodePreview{
+      transition: 0.8s;
+      color: $gray;
+      margin-left: 3rem;
+
+}
+    .episodePreview:hover{
+      transform: scale(1.1);
+      color: #fff;
+
+  }
+
+
+    .episodeDescription{
+    display: flex;
+    margin-top: 1rem ;
+
+
+  }
+}
+}

@@ -1,0 +1,38 @@
+@import '../../../_variables';
+
+.sidebar{
+  >button{
+    background-color: transparent;
+    border: none;
+    color: $gray;
+    font-size: 30px;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    display: none;
+    animation: opacity .4s;
+
+    &.show{
+      display: block;
+    }
+    li{
+      margin-bottom: .5rem;
+      a{
+        padding: 0.5rem;
+        display: block;
+        color: $gray;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        font-size: 20px;
+        text-align: left;
+
+        &:hover,
+        &:active{
+          border-color: $red;
+          background-color: #2a2a2c;
+        }
+      }
+    }
+  }
+}
