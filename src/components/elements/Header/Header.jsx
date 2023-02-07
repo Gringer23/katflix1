@@ -3,8 +3,14 @@ import style from './Header.module.scss'
 import Profile from "../Profile/Profile";
 import logoKatFlix from "../../../images/katflix.png"
 import {Link} from "react-router-dom";
+import {useContext, useState} from "react";
+import {CustomContext} from "../../../Context";
+
 
 const Header = ({onChange}) =>{
+
+    const {user} = useContext(CustomContext);
+    const [sideBar, setSideBar] = useState(false);
 
    return (
        <div className={style.header}>
@@ -18,7 +24,18 @@ const Header = ({onChange}) =>{
                </Link>
                <Search onChange={onChange}/>
            </div>
-           <Profile/>
+          <div className={style.profile}>
+              {
+                  user.name.length
+                      ?
+                          <Profile sideBar={sideBar} setSideBar={setSideBar}/>
+                      :
+                      <Link to="/login">
+                          Войти
+                      </Link>
+              }
+
+          </div>
        </div>
    )
 }

@@ -1,6 +1,13 @@
 import style from './Profile.module.scss'
+import {useContext} from "react";
+import {CustomContext} from "../../../Context";
+import Avatar from "../../UI/Avatar/Avatar";
 
-const Profile = () => {
+const Profile = ({sideBar, setSideBar}) => {
+
+    const {user, logOutUser} = useContext(CustomContext);
+
+
     return(
         <div className={style['profile-wrapper']}>
             <div className={style.notification}>
@@ -9,12 +16,19 @@ const Profile = () => {
             </div>
             <div className={style.profile}>
                 <div>
-                    <img
-                    src='https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/06/28/14/avatar.jpg?width=50'
-                    alt=''
-                    />
+                    <Avatar/>
                 </div>
-                <i className='bx bx-caret-down'></i>
+                <div className={style.log}>
+                    <button onClick={() => setSideBar(!sideBar)}>
+                <i className={`bx bx-caret-${sideBar ? 'up' : 'down'}`}></i>
+                    </button>
+                    <div className={sideBar? style.show : style.sideBar}>
+                        <div className={style.barInfo}>
+                        <span>Привет, {user.name}</span>
+                        <span style={{marginTop: '10px'}} className={style.logout} onClick={() => logOutUser()}>Выйти</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

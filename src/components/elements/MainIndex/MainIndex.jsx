@@ -9,7 +9,6 @@ import {Link} from "react-router-dom";
 
 const MainIndex = () =>{
     const [sideBar, setSideBar] = useState(false);
-
     const [value, setValue] = useState('');
 
     const filtered = Data.filter(film =>{

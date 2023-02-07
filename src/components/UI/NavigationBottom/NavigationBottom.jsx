@@ -1,7 +1,8 @@
 import style from './NavigationBottom.module.scss'
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
+import {CustomContext} from "../../../Context";
 
 const tabs = [
     {
@@ -21,6 +22,7 @@ const tabs = [
 const NavigationBottom = ({activeTab, setActiveTab}) => {
 
     const {id} = useParams();
+    const {user} = useContext(CustomContext);
     const [film, setFilm] = useState([]);
     useEffect(() =>{
         axios.get(`http://localhost:3001/Data/${id}`).then(data => setFilm(data.data));
@@ -28,7 +30,7 @@ const NavigationBottom = ({activeTab, setActiveTab}) => {
 
     let tab = [];
 
-    if(film.photos){
+    if(film.photos && user.name.length){
          tab = tabs.map(tab => {
             return(
                 <button

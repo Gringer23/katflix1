@@ -13,4 +13,24 @@
     align-items: center;
   }
 }
+
+  >.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    >a{
+      margin-left: 10px ;
+      color: #9b9a97;
+      border: 2px solid #c62e21;
+      padding: 5px 20px;
+      border-radius: 20px;
+
+      &:hover{
+        color: #fff;
+        border-color: #982117;
+      }
+    }
+
+  }
 }

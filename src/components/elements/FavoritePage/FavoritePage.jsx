@@ -1,14 +1,16 @@
 import {useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Header from "../Header/Header";
 import styles from "../MainIndex/MainIndex.module.scss";
 import Sidebar from "../../UI/SideBar/Sidebar";
 import {Link} from "react-router-dom";
+import {CustomContext} from "../../../Context";
 
 
 const FavoritePage = () =>{
     const storeData = useSelector(state => state.favoriteReducer);
     const [favoriteFilm, setFavoriteFilm] = useState([]);
+    const {user} = useContext(CustomContext);
 
     useEffect(() => {
         const arr = Object.entries(storeData);
@@ -35,7 +37,7 @@ const FavoritePage = () =>{
     return(
         <>
             {
-                favoriteFilm.length ?
+                favoriteFilm.length && user.name.length ?
                     <div>
                         <Header onChange={(e)=> setValue(e.target.value)}/>
                         <div className={styles.wrapper}>

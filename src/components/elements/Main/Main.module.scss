@@ -51,7 +51,13 @@
     }
 
     .buttons{
+      a{
+        color: #a22518;
+      }
 
+      a:hover{
+        color: #d91300;
+      }
     }
   }
 }

@@ -9,6 +9,8 @@ import VideoPlayerFilm from "./components/UI/VideoPlayerFilm/VideoPlayerFilm";
 import Films from "./components/elements/Films/Films";
 import Serials from "./components/elements/Serials/Serials";
 import FavoritePage from "./components/elements/FavoritePage/FavoritePage";
+import LoginPage from "./components/elements/LoginPage/LoginPage";
+import RegisterPage from "./components/elements/RegisterPage/RegisterPage";
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
              <Route path="/Films" element={<Films/>}/>
              <Route path="/Serials" element={<Serials/>}/>
              <Route path="/Favorite" element={<FavoritePage/>}/>
+             <Route path="/login" element={<LoginPage/>}/>
+             <Route path="/register" element={<RegisterPage/>}/>
          </Routes>
         </div>
 )
