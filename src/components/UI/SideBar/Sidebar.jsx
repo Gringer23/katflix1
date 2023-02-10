@@ -3,7 +3,27 @@ import {Link} from "react-router-dom";
 
 
 const menu =[
-    'Popular', 'Serials', 'Films', 'Favorite',
+    {
+        id: 1,
+        name: 'Popular',
+        rusName: 'Популярное'
+    },
+    {
+        id: 2,
+        name: 'Films',
+        rusName: 'Фильмы'
+    },
+    {
+        id: 3,
+        name: 'Serials',
+        rusName: 'Сериалы'
+    },
+    {
+        id: 4,
+        name: 'Favorite',
+        rusName: 'Избранное'
+    },
+
 ]
 
 const Sidebar = ({sideBar, setSideBar}) =>{
@@ -14,8 +34,8 @@ const Sidebar = ({sideBar, setSideBar}) =>{
             </button>
             <ul className={sideBar ? style.show : ''}>
                 {menu.map(title =>(
-                    <li key={title}>
-                        <Link to={`/${title}`}>{title}</Link>
+                    <li key={title.id}>
+                        <Link to={`/${title.name}`}>{title.rusName}</Link>
                     </li>
                 ))}
             </ul>

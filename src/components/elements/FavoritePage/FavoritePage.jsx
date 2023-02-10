@@ -37,7 +37,7 @@ const FavoritePage = () =>{
     return(
         <>
             {
-                favoriteFilm.length && user.name.length ?
+                favoriteFilm.length ?
                     <div>
                         <Header onChange={(e)=> setValue(e.target.value)}/>
                         <div className={styles.wrapper}>
@@ -60,7 +60,8 @@ const FavoritePage = () =>{
                             </div>
                         </div>
                     </div>
-                    : <div>
+                    :
+                    <div>
                     <Header/>
                         <div className={styles.wrapper}>
                         <Sidebar
@@ -68,7 +69,12 @@ const FavoritePage = () =>{
                             setSideBar={setSideBar}/>
                         <div className={styles.film}>
                             <div className={styles.filmLib}>
-                                <span style={{color: '#fff'}}>Вы пока ничего не добавили в избранное...</span>
+                                <span style={{color: '#fff'}}>{
+                                    user.name.length ? 'Вы пока ничего не добавили в избранное...' :'Для добавления в Избранное, необходимо ' }
+                                    {
+                                        user.name.length ? '' : <Link to={'/login'} style={{color: '#c62e21'}}>войти</Link>
+                                    }
+                                </span>
                             </div>
                         </div>
                         </div>

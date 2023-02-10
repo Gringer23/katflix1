@@ -5,9 +5,13 @@ import {useNavigate} from "react-router-dom";
 export const CustomContext = createContext();
 
 export const Context = (props) =>{
+
     const [user, setUser] = useState({
         name : ""
     });
+    const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [isError, setIsError] = useState('');
     const nav = useNavigate();
 
     useEffect(() =>{
@@ -22,9 +26,12 @@ export const Context = (props) =>{
     const registerUser = (data) =>{
         axios.post('http://localhost:3001/register' , {...data})
             .then((res) => {
-                localStorage.setItem('user', JSON.stringify(res.data.user))
-                setUser(res.data.user);
-                nav('/');
+                if(password === passwordConfirm){
+                    localStorage.setItem('user', JSON.stringify(res.data.user))
+                    setUser(res.data.user);
+                    nav('/');
+                }
+                setIsError('Пароли не совпададют');
             });
     }
 
@@ -33,7 +40,7 @@ export const Context = (props) =>{
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user))
                 setUser(res.data.user);
-                nav('/')
+                nav(-1)
             })
     }
 
@@ -46,6 +53,11 @@ export const Context = (props) =>{
 
     const value = {
         user,
+        password,
+        setPassword,
+        passwordConfirm,
+        setPasswordConfirm,
+        isError,
         setUser,
         logOutUser,
         registerUser,

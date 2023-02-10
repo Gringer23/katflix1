@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../Header/Header";
 import styles from "../MainIndex/MainIndex.module.scss";
 import Sidebar from "../../UI/SideBar/Sidebar";
+import PulseLoader from "react-spinners/PulseLoader";
 
 
 const Serials = () => {
@@ -29,6 +30,7 @@ const Serials = () => {
                     setSideBar={setBar}/>
                 <div className={styles.film} >
                     {
+                        serials.length === 0 ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={styles.loader}/> :
                         filtered.map(film =>
                             <div key={film.id} className={styles.filmLib}>
                                 <Link to={`/film/${film.id}/${film.name}`}>

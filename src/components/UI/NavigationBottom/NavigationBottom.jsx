@@ -7,15 +7,17 @@ import {CustomContext} from "../../../Context";
 const tabs = [
     {
         _id: 1,
-        name: 'Overview',
+        name: 'О Сериале',
+        film: 'О фильме'
     },
     {
         _id: 2,
-        name: 'Episodes',
+        name: 'Серии',
     },
     {
         _id: 3,
-        name: 'Details'
+        name: 'Детали',
+        film: 'Детали'
     },
 ]
 
@@ -54,7 +56,7 @@ const NavigationBottom = ({activeTab, setActiveTab}) => {
                     onClick={() => setActiveTab(tab._id)}
                     className={activeTab === tab._id ? style.active : ''}
                 >
-                    {tab.name}
+                    {tab.film}
                 </button>
             )
         })

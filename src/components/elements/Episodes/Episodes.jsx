@@ -9,7 +9,7 @@ const Episodes = ({movie, id}) => {
     const slider = useRef(null);
     const [items, setItems] = useState([]);
     const [offset, setOffset] = useState(0);
-    const position = 398;
+    const position = 390;
 
 
     const prevHandler = () =>{
@@ -39,14 +39,15 @@ const Episodes = ({movie, id}) => {
 
 
     return(
+        <div className={style.ep}>
+            <img src={movie.logo} alt={movie.name} width='300' style={{opacity: .7}}/>
         <div className={style.backEpisode}>
-            <img src={movie.logo} alt={movie.name} width='300' style={{opacity: .7, padding:' 5rem 0 0rem 3rem'}}/>
-        <div className={style.episodes} key={id}>
             <div className={style.buttonSlider} style={{left: '25px'}}>
-           <Button cb={prevHandler}>
-               <i className='bx bxs-chevron-left'></i>
-           </Button>
+                <Button cb={prevHandler}>
+                    <i className='bx bxs-chevron-left'></i>
+                </Button>
             </div>
+        <div className={style.episodes} key={id}>
             <div className={style.episodeLi} ref={slider}>
             {
                 movie.photos.map(photo =>{
@@ -64,6 +65,7 @@ const Episodes = ({movie, id}) => {
                 )
             }
             </div>
+        </div>
             <div className={style.buttonSlider} style={{right: '25px'}}>
             <Button cb={nextHandler}>
                 <i className='bx bxs-chevron-right' ></i>
@@ -71,7 +73,6 @@ const Episodes = ({movie, id}) => {
             </div>
         </div>
         </div>
-
 
     )
 }

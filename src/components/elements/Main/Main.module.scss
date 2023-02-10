@@ -5,6 +5,12 @@
   min-height: 614px;
   display: flex;
 
+  .loader{
+    position: absolute;
+    top: 40%;
+    left: 48%;
+  }
+
   .main{
     background-size: cover;
     background-repeat: no-repeat;

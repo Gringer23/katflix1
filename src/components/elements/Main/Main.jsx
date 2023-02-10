@@ -9,6 +9,7 @@ import Header from "../Header/Header";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import {useSelector} from "react-redux";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Main = () => {
     const {id} = useParams();
@@ -21,6 +22,7 @@ const Main = () => {
         axios.get(`http://localhost:3001/Data/${id}`).then(data => setFilm(data.data));
         storeData[id] ? setFavourite(true) : setFavourite(false);
     }, [id]);
+
     return(
         <div key={id}>
         <Header/>
@@ -30,19 +32,21 @@ const Main = () => {
             sideBar={sideBarShow}
             setSideBar={setSideBarShow}/>
 
-            <div className={style.main}
-                style={{backgroundImage: `url(${film.mainImage})`,
-                width: sideBarShow ? '85%' : '90%'}}>
-                    {
+                    <div className={style.main}
+                         style={{backgroundImage: `url(${film.mainImage})`,
+                             width: sideBarShow ? '85%' : '90%'}}>
+                        {
+                            !film.id ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={style.loader}/> :
                         activeTab === 1 ?
-                <Information movie={film} favoriteFilm={favorite} setFavoriteFilm={setFavourite}/>
-                    : activeTab === 2 ?
-                                <Episodes movie={film} id={film.id}/>
-                                : activeTab === 3 &&
-                                <Details movie={film}/>
-                    }
-                <NavigationBottom activeTab={activeTab} setActiveTab={setActiveTab}/>
-            </div>
+                        <Information movie={film} favoriteFilm={favorite} setFavoriteFilm={setFavourite}/>
+                        : activeTab === 2 ?
+                        <Episodes movie={film} id={film.id}/>
+                        : activeTab === 3 &&
+                        <Details movie={film}/>
+                        }
+                        <NavigationBottom activeTab={activeTab} setActiveTab={setActiveTab}/>
+                    </div>
+
         </div>
         </div>
     )

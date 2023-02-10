@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import styles from "../MainIndex/MainIndex.module.scss";
 import Sidebar from "../../UI/SideBar/Sidebar";
 import {Link, useParams} from "react-router-dom";
+import PulseLoader from "react-spinners/PulseLoader";
 
 
 const Films = () => {
@@ -21,7 +22,7 @@ const Films = () => {
     });
 
     return(
-        <div >
+        <div>
             <Header onChange={(e)=> setValue(e.target.value)}/>
             <div className={styles.wrapper}>
                 <Sidebar
@@ -29,6 +30,7 @@ const Films = () => {
                     setSideBar={setBar}/>
                 <div className={styles.film} >
                     {
+                        film.length === 0 ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={styles.loader}/> :
                         filtered.map(film =>
                             <div key={film.id} className={styles.filmLib}>
                                 <Link to={`/film/${film.id}/${film.name}`}>
