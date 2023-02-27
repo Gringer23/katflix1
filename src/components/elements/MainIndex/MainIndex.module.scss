@@ -1,94 +1,18 @@
-.wrapper {
+.wrapper{
   display: flex;
   flex-direction: row;
   animation: opacity .6s;
+  margin-top: 5rem;
 
+  &_genre{
+    display: flex;
+    flex-direction: column;
+    max-width: 82%;
 
-  >div{
-
-    >h2{
-      color: #9b9a97;
-      margin: 0 0 1rem 1.3rem;
-      position: relative;
-      bottom: -1rem;
+    >.loader{
+      position: absolute;
+      top: 40%;
+      left: 48%;
     }
-  }
-
-  .buttonSlider {
-    z-index: 2;
-    font-size: 40px;
-    position: relative;
-    border: none;
-    top: 1rem;
-
-
-    > button {
-      position: relative;
-      border: none;
-      width: 40px;
-      height: 197px;
-      background-color: #2a2a2c;
-      margin-right: -0.1rem;
-
-      &:hover {
-        background-image: linear-gradient(to left, #0d1011, transparent);
-      }
-    }
-  }
-    .film {
-      display: inline-flex;
-      overflow: hidden;
-
-
-
-      .loader {
-        position: absolute;
-        top: 40%;
-        left: 48%;
-      }
-
-      .main {
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-        height: 200px;
-        transition: 0.8s;
-
-        &:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 40px black;
-        }
-
-        .rating {
-          color: #fff;
-          width: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 5px 0 0 5px;
-          border-radius: 20px;
-        }
-      }
-
-      .filmLib {
-        display: flex;
-        margin: 20px;
-        cursor: pointer;
-        animation: opacity .6s;
-        transition: translate;
-        transition-property: transform;
-        transition-duration: .4s;
-        transition-timing-function: ease-in-out;
-
-        > a {
-          text-decoration: none;
-          display: flex;
-          flex-direction: column;
-
-          > span {
-            color: #fff;
-          }
-        }
-      }
     }
   }

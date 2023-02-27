@@ -13,6 +13,7 @@ const Header = ({onChange}) =>{
     const [sideBar, setSideBar] = useState(false);
 
    return (
+       <div className={style.header__fixed}>
        <div className={style.header}>
            <div>
                <Link to="/">
@@ -36,6 +37,7 @@ const Header = ({onChange}) =>{
               }
 
           </div>
+       </div>
        </div>
    )
 }

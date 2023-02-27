@@ -5,12 +5,15 @@ import styles from "../MainIndex/MainIndex.module.scss";
 import Sidebar from "../../UI/SideBar/Sidebar";
 import {Link, useParams} from "react-router-dom";
 import PulseLoader from "react-spinners/PulseLoader";
+import Button from "../../UI/Button/Button";
 
 
 const Films = () => {
 
     const {films} = useParams();
     const [film, setFilm] = useState([]);
+    const [offset, setOffset] = useState(0);
+    const position = 390;
     useEffect(() =>{
         axios.get('http://localhost:3001/Data?type=Film').then(res => setFilm(res.data));
     }, [films]);
@@ -21,18 +24,43 @@ const Films = () => {
         return filterFilm.rusName.toLowerCase().includes(value.toLowerCase());
     });
 
+    const prevSlideHandler = () =>{
+        setOffset((currentOffset) => {
+            const newOffset = currentOffset + position;
+            return Math.min(newOffset, 0);
+        })
+    }
+
+    const nextHandler = () =>{
+        setOffset((currentOffset) => {
+            const newOffset = currentOffset - position;
+            const maxOffset = -(position * (film.length - 3));
+            return Math.max(newOffset, maxOffset);
+        })
+    }
+
     return(
         <div>
-            <Header onChange={(e)=> setValue(e.target.value)}/>
+            <Header onChange={(e) => setValue(e.target.value)}/>
             <div className={styles.wrapper}>
                 <Sidebar
                     sideBar={bar}
                     setSideBar={setBar}/>
-                <div className={styles.film} >
+                <div className={styles.wrapper_genre}>
+                    <h2 className={styles.title}>Фильмы</h2>
+                    <div className={styles.pop}>
+                        <div className={styles.buttonSlider}
+                             style={{display: `${filtered.length <= 3 || filtered.length === 0 ? 'none' : ''}`}}>
+                            <Button cb={prevSlideHandler}>
+                                <i className='bx bxs-chevron-left'></i>
+                            </Button>
+                        </div>
+                        <div className={styles.film}>
                     {
                         film.length === 0 ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={styles.loader}/> :
                         filtered.map(film =>
-                            <div key={film.id} className={styles.filmLib}>
+                            <div key={film.id} className={styles.filmLib}
+                                 style={{transform: `translateX(${offset}px)`}}>
                                 <Link to={`/film/${film.id}/${film.name}`}>
                                     <div key={film.id}  className={styles.main} style={{backgroundImage: `url(${film.mainImage})`, width: '350px'}}>
                                         <div className={styles.rating} style={{backgroundColor: film.rating > 7 ? '#02ad02' : '#7c7b7b'}}>{film.rating}</div>
@@ -42,6 +70,15 @@ const Films = () => {
                             </div>
                         )
                     }
+                </div>
+                        <div className={styles.buttonSlider}
+                             style={{display: `${filtered.length <= 3 || filtered.length === 0 ? 'none' : ''}`, left: '20px'}}>
+                            <Button cb={nextHandler}>
+                                <i className='bx bxs-chevron-right'></i>
+                            </Button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
