@@ -5,6 +5,7 @@ import {useForm} from "react-hook-form";
 import {useContext, useEffect, useState} from "react";
 import {CustomContext} from "../../../Context";
 import PulseLoader from "react-spinners/PulseLoader";
+import backImg from "../../../images/films.jpg";
 
 
 const LoginPage = () => {
@@ -25,19 +26,25 @@ const LoginPage = () => {
 
     return(
         <div>
+            <img src={backImg} className={style.img_back} />
+        <div className={style.loginPage}>
             {loading ? <PulseLoader size={20} loading={loading} color={'#c62e21'} className={style.loader}/> :
-                <div className={style.loginPage}>
+                <div className={style.loginForm}>
                     <Link to="/">
                         <img src={logoKatFlix}
                              alt="Katflix"
-                             height='100'
-                             width='350'
+                             height='50'
+                             width='200'
                         />
                     </Link>
                     <form onSubmit={handleSubmit(loginUser)}>
                         <h2>Вход в аккаунт</h2>
-                        <input {...register('email')} type="email" placeholder="Введите e-mail"/>
-                        <input {...register('password')} type="password" placeholder="Введите пароль"/>
+                        <div className={style.inputBox}>
+                            <input {...register('email')} type="email" placeholder="Введите e-mail"/>
+                        </div>
+                        <div className={style.inputBox}>
+                            <input {...register('password')} type="password" placeholder="Введите пароль"/>
+                        </div>
                         <button type="submit">Войти</button>
                     </form>
                     <span>
@@ -45,6 +52,7 @@ const LoginPage = () => {
             </span>
                 </div>
             }
+        </div>
         </div>
     )
 }
