@@ -28,7 +28,7 @@ const menu =[
 
 const Sidebar = ({sideBar, setSideBar}) =>{
     return (
-        <div className={style.sidebar} style={{width: sideBar ? '15%' : '10%'}}>
+        <div className={style.sidebar} style={{width: sideBar ? '15%' : '10%', transition: '.3s all'}}>
             <button onClick={() => setSideBar(!sideBar)}>
                 <i className={`bx bx-${sideBar ? 'x' : 'menu-alt-left'}`}></i>
             </button>

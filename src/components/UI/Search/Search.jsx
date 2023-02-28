@@ -7,7 +7,7 @@ import the from '../../../images/logo_tlou.png'
 const Search = () =>{
 
     const [movie, setMovie] = useState([]);
-
+    const [focus, setFocus] = useState(false);
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
         // Пока остаются элементы для перемешивания.
@@ -41,16 +41,24 @@ const Search = () =>{
                 <i className='bx bx-search-alt'></i>
                 <input type='text' placeholder='Я ищу...'
                 onChange={(e) => setValue(e.target.value)}
-                value={value}/>
-                <div className={style.autoComplete} style={{display: `${value ? '' : 'none'}`}}>
+                value={value}
+                onFocus={() => setFocus(true)}/>
+                <div className={style.autoComplete} style={{display: `${value && focus ? '' : 'none'}` }}>
                     {
                         value && filter.length !== 0 ?
                             filter.map((film => {
                                 return(
                                     <div className={style.autoComplete__list}>
                                         <Link to={`/film/${film.id}/${film.name}`}>
-                                        <img src={film.mainImage} width="70px"/>
-                                        <li key={film.id} className={style.autoComplete__item}>{film.rusName}</li>
+                                        <img src={film.mainImage} width="70px" className={style.autoComplete__img}/>
+                                            <div className={style.autoComplete__item__wrapper}>
+                                        <div key={film.id} className={style.autoComplete__item}>{film.rusName}</div>
+                                            <div className={style.autoComplete__item__watch}>
+                                                <div className={style.autoComplete__item__watch_icon}><i
+                                                    className='bx bx-play'></i></div>
+                                                <span className={style.autoComplete__item__watch_text}>Смотреть</span>
+                                            </div>
+                                            </div>
                                         </Link>
                                     </div>
                                 )

@@ -43,7 +43,7 @@ const MainIndex = () => {
                 <Sidebar
                 sideBar={sideBar}
                 setSideBar={setSideBar}/>
-                <div className={styles.wrapper_genre}>
+                <div className={styles.wrapper_genre} style={{transition: sideBar ? '.3s all' : ''}}>
                     {
                             movie.length < 1 ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={styles.loader}/> :
                                     <>

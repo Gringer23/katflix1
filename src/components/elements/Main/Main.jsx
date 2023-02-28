@@ -34,7 +34,7 @@ const Main = () => {
 
                     <div className={style.main}
                          style={{backgroundImage: `url(${film.mainImage})`,
-                             width: sideBarShow ? '85%' : '90%'}}>
+                             width: sideBarShow ? '85%' : '90%', transition: sideBarShow ? '.3s all': ''}}>
                         {
                             !film.id ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={style.loader}/> :
                         activeTab === 1 ?
