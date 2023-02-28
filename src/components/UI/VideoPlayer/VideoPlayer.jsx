@@ -26,7 +26,6 @@ const VideoPlayer = () => {
 
     return(
        <>
-           <Header/>
            <ReactPlayer url={`${video}`} width='100%' height='630px' controls={true} playing={false} volume={0.5} pip={true} onEnded={() => nav(-1)}>
            </ReactPlayer>
        </>

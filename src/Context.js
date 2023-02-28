@@ -40,7 +40,7 @@ export const Context = (props) =>{
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user))
                 setUser(res.data.user);
-                nav(-1)
+                nav('/')
             })
     }
 

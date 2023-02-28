@@ -1,11 +1,13 @@
 @import '../../../_variables';
 
 .sidebar{
+  position: relative;
   >button{
     background-color: transparent;
     border: none;
     color: $gray;
     font-size: 30px;
+
   }
   ul{
     list-style: none;

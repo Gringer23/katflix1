@@ -3,7 +3,7 @@ import style from './Complitation.module.scss';
 import {Link} from "react-router-dom";
 import Button from "../../UI/Button/Button";
 
-const PopularComplitation = ({value, movie}) => {
+const PopularComplitation = ({movie}) => {
 
     const [offset, setOffset] = useState(0);
     const ref = useRef('');
@@ -14,10 +14,6 @@ const PopularComplitation = ({value, movie}) => {
     });
 
     const items = genreFilter;
-
-    const filtered = genreFilter.filter(film => {
-        return film.rusName.toLowerCase().includes(value.toLowerCase());
-    });
 
     const prevSlideHandler = () =>{
         setOffset((currentOffset) => {
@@ -37,17 +33,17 @@ const PopularComplitation = ({value, movie}) => {
     return (
         <>
 
-            <h2 ref={ref} className={style.title} style={{display: `${filtered.length === 0 ? 'none' : ''}`}}>Популярное</h2>
+            <h2 ref={ref} className={style.title} style={{display: `${genreFilter.length === 0 ? 'none' : ''}`}}>Популярное</h2>
             <div className={style.popular}>
                 <div className={style.buttonSlider}
-                     style={{display: `${filtered.length <= 3 || filtered.length === 0 ? 'none' : ''}`}}>
+                     style={{display: `${genreFilter.length <= 3 || genreFilter.length === 0 ? 'none' : ''}`}}>
                     <Button cb={prevSlideHandler}>
                         <i className='bx bxs-chevron-left'></i>
                     </Button>
                 </div>
                 <div className={style.films}>
                     {
-                                filtered.map(film =>
+                                genreFilter.map(film =>
                                     <div key={film.id} className={style.filmLib}
                                          style={{transform: `translateX(${offset}px)`}}>
                                         <Link to={`film/${film.id}/${film.name}`}>
@@ -63,7 +59,7 @@ const PopularComplitation = ({value, movie}) => {
                     }
                 </div>
                 <div className={style.buttonSlider}
-                     style={{display: `${filtered.length <= 3 || filtered.length === 0 ? 'none' : ''}`, left: '20px'}}>
+                     style={{display: `${genreFilter.length <= 3 || genreFilter.length === 0 ? 'none' : ''}`, left: '10px'}}>
                     <Button cb={nextHandler}>
                         <i className='bx bxs-chevron-right'></i>
                     </Button>

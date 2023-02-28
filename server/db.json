@@ -161,32 +161,85 @@
     },
     {
       "id": "5",
-      "name": "realvampire",
-      "type": "Film",
-      "rusName": "Реальные упыри",
-      "logo": "//avatars.mds.yandex.net/get-ott/223007/2a00000171ad00b4d651391667474ab71359/960x540",
-      "mainImage": "https://avatars.mds.yandex.net/get-ott/223007/2a00000161286946bf86b4756a71d239beb5/2016x1134",
-      "year": "2014",
+      "name": "theLastOfUs",
+      "type": "Serial",
+      "rusName": "Одни из нас",
+      "logo": "/static/media/logo_tlou.08b8ac9b6cb0d486b579.png",
+      "mainImage": "/static/media/theLastOfUs.f868e79d6bfd74f9222a.jpg",
+      "year": "2023",
       "limitAge": "18+",
-      "rating": "6.3",
-      "duration": "1 ч 56 мин",
-      "description": "Один из лучших фильмов по версии Rotten Tomatoes с рейтингом кинокритиков 96%. Трое вампиров спорят из-за мытья посуды, ходят на сомнительные вечеринки и пытаются приспособиться к современным реалиям. Жанр мокьюментари и юмор увлекут даже тех, кто не любит фильмы о вампирах.",
+      "rating": "9.3",
+      "duration": "56 мин",
+      "series": "10 серий",
+      "description": "«Одни из нас» — американский постапокалиптический телесериал канала HBO. Он основан на видеоигре 2013 года The Last of Us, разработанной компанией Naughty Dog, и расскажет историю контрабандиста Джоэла, который сопровождает девочку-подростка Элли через постапокалиптические США.",
       "video": "/static/media/Eminem - Without Me (Official Music Video).77bd186250678c89830e.mp4",
       "role": [
-        "Джемейн Клемент",
-        "Тайка Вайтити",
-        "Джонатан Бруг",
-        "Кори Гонсалес-Макуэр",
-        "Стью Рутерфорд",
-        "Бен Френшам",
-        "Джеки ван Бик",
-        "Елена Стейко",
-        "Джейсон Хойте",
-        "Карен О’Лири"
+        "Педро Паскаль",
+        "Белла Рэмзи",
+        "Анна Торв",
+        "Гэбриел Луна",
+        "Ламар Джонсон",
+        "Мелани Лински",
+        "Нико Паркер",
+        "Keivonn Woodard",
+        "Джеффри Пирс",
+        "Джон Гец"
       ],
-      "about": "История жизни Виаго, Дикона и Владислава — трёх соседей и по совместительству бессмертных вампиров, которые всего лишь пытаются выжить в современном мире, где есть арендная плата, фейсконтроль в ночных клубах, губительный солнечный свет и другие неприятности.",
+      "about": "Закалённый в борьбе за выживание Джоэл и Элли — отважная, не по годам смышлёная девушка-подросток — вынуждены объединиться и помогать друг другу в странствиях по руинам Соединённых Штатов.",
       "genre": [
-        "Комедия"
+        "Популярное",
+        "Триллер",
+        "Ужасы"
+      ],
+      "photos": [
+        {
+          "id": "1",
+          "name": "ref",
+          "source": "https://ixbt.online/gametech/covers/2023/01/17/nova-filepond-nf5nxY.png",
+          "video": "/static/media/ACRAZE - Do It To It (ft. Cherish) - (Official Lyric Video) (720p).c63de3b8ff6aa91e7742.mp4"
+        },
+        {
+          "id": "2",
+          "name": "2",
+          "source": "https://s1.stc.all.kpcdn.net/putevoditel/serialy/wp-content/uploads/2023/01/111-1.jpg",
+          "video": "/static/media/Eminem - Without Me (Official Music Video).77bd186250678c89830e.mp4"
+        },
+        {
+          "id": "3",
+          "name": "3",
+          "source": "https://ixbt.online/gametech/covers/2023/01/31/nova-filepond-KXi5zj.jpg",
+          "video": "/static/media/ACRAZE - Do It To It (ft. Cherish) - (Official Lyric Video) (720p).c63de3b8ff6aa91e7742.mp4"
+        },
+        {
+          "id": "4",
+          "name": "4",
+          "source": "https://www.soyuz.ru/public/uploads/files/2/7616596/202301301158042919367476.jpg",
+          "video": "/static/media/Eminem - Without Me (Official Music Video).77bd186250678c89830e.mp4"
+        },
+        {
+          "id": "5",
+          "name": "5",
+          "source": "https://www.zetflix.pro/uploads/posts/2023-02-12/125487-endure-and-survive.jpg",
+          "video": "/static/media/ACRAZE - Do It To It (ft. Cherish) - (Official Lyric Video) (720p).c63de3b8ff6aa91e7742.mp4"
+        },
+        {
+          "id": "6",
+          "name": "6",
+          "source": "https://avatars.mds.yandex.net/get-kinopoisk-post-img/1362954/451359721828fdbbd7734416239c1d42/960",
+          "video": "/static/media/Eminem - Without Me (Official Music Video).77bd186250678c89830e.mp4"
+        },
+        {
+          "id": "7",
+          "name": "7",
+          "source": "https://www.pluggedin.ru/images/1-bigTopImage_2023_02_26_23_47_21.jpeg",
+          "video": "/static/media/Eminem - Without Me (Official Music Video).77bd186250678c89830e.mp4"
+        },
+        {
+          "id": "8",
+          "name": "8",
+          "source": "https://3dnews.ru/assets/external/illustrations/2022/12/05/1078373/0.jpg",
+          "video": "/static/media/Eminem - Without Me (Official Music Video).77bd186250678c89830e.mp4"
+        }
       ]
     },
     {

@@ -3,7 +3,7 @@ import style from "./Complitation.module.scss"
 import {Link} from "react-router-dom";
 import Button from "../../UI/Button/Button";
 
-const ComedyComplitation = ({value, movie}) => {
+const ComedyComplitation = ( {movie}) => {
 
     const [offset, setOffset] = useState(0);
     const ref = useRef('');
@@ -15,9 +15,6 @@ const ComedyComplitation = ({value, movie}) => {
 
     const items = genreFilter;
 
-    const filteredComedy = genreFilter.filter(film => {
-        return film.rusName.toLowerCase().includes(value.toLowerCase());;
-    });
 
     const prevSlideHandler = () =>{
         setOffset((currentOffset) => {
@@ -36,17 +33,17 @@ const ComedyComplitation = ({value, movie}) => {
     return (
         <div>
 
-            <h2 ref={ref} className={style.title} style={{display: `${filteredComedy.length === 0 ? 'none' : ''}`}}>Комедия</h2>
+            <h2 ref={ref} className={style.title} style={{display: `${genreFilter.length === 0 ? 'none' : ''}`}}>Комедия</h2>
                     <div className={style.popular}>
                         <div className={style.buttonSlider}
-                             style={{display: `${filteredComedy.length <= 3 || filteredComedy.length === 0 ? 'none' : ''}`}}>
+                             style={{display: `${genreFilter.length <= 3 || genreFilter.length === 0 ? 'none' : ''}`}}>
                             <Button cb={prevSlideHandler}>
                                 <i className='bx bxs-chevron-left'></i>
                             </Button>
                         </div>
                         <div className={style.films}>
                             {
-                                        filteredComedy.map(film =>
+                                        genreFilter.map(film =>
                                             <div key={film.id} className={style.filmLib}
                                                  style={{transform: `translateX(${offset}px)`}}>
                                                 <Link to={`film/${film.id}/${film.name}`}>
@@ -62,7 +59,7 @@ const ComedyComplitation = ({value, movie}) => {
                             }
                         </div>
                         <div className={style.buttonSlider}
-                             style={{display: `${filteredComedy.length <= 3 || filteredComedy.length === 0 ? 'none' : ''}`, left: '20px'}}>
+                             style={{display: `${genreFilter.length <= 3 || genreFilter.length === 0 ? 'none' : ''}`, left: '10px'}}>
                             <Button cb={nextHandler}>
                                 <i className='bx bxs-chevron-right'></i>
                             </Button>

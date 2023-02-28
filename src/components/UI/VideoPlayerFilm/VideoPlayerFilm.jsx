@@ -15,8 +15,7 @@ const VideoPlayerFilm = () => {
 
     return (
         <>
-            <Header/>
-           <ReactPlayer pip={true} playing={false} controls={true} width='100%' height='630px' url={`${film.video}`} volume={0.5} onEnded={() => nav(-1)}/>
+           <ReactPlayer pip={true} playing={false} controls={true} width='100%' height='700px' url={`${film.video}`} volume={0.5} onEnded={() => nav(-1)}/>
         </>
     )
 

@@ -28,3 +28,17 @@ a{
 i{
   cursor: pointer;
 }
+
+div::-webkit-scrollbar {
+  width: 10px;               /* ширина всей полосы прокрутки */
+}
+
+div::-webkit-scrollbar-track {
+  background: #575757;        /* цвет зоны отслеживания */
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #0f1011;    /* цвет бегунка */
+  border-radius: 20px;       /* округлось бегунка */
+  border: 1px solid #c62e21;  /* отступ вокруг бегунка */
+}

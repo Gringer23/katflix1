@@ -7,7 +7,7 @@ import {useContext, useState} from "react";
 import {CustomContext} from "../../../Context";
 
 
-const Header = ({onChange}) =>{
+const Header = () =>{
 
     const {user} = useContext(CustomContext);
     const [sideBar, setSideBar] = useState(false);
@@ -23,7 +23,7 @@ const Header = ({onChange}) =>{
             width='130'
                    />
                </Link>
-               <Search onChange={onChange}/>
+               <Search/>
            </div>
           <div className={style.profile}>
               {

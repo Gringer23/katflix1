@@ -12,7 +12,6 @@ const MainIndex = () => {
 
     const [movie, setMovie] = useState([]);
     const [sideBar, setSideBar] = useState(false);
-    const [value, setValue] = useState('');
 
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
@@ -36,13 +35,10 @@ const MainIndex = () => {
         })
     }, []);
 
-    const filter = movie.filter(film => {
-        return film.rusName.toLowerCase().includes(value.toLowerCase());
-    })
 
     return (
         <div>
-            <Header onChange={(e) => setValue(e.target.value)}/>
+            <Header/>
             <div className={styles.wrapper}>
                 <Sidebar
                 sideBar={sideBar}
@@ -50,10 +46,9 @@ const MainIndex = () => {
                 <div className={styles.wrapper_genre}>
                     {
                             movie.length < 1 ? <PulseLoader size={20} loading={true} color={'#c62e21'} className={styles.loader}/> :
-                                filter.length === 0 ? <span style={{color: '#fff'}}>По вашему запросу ничего не нашлось</span> :
                                     <>
-                                        <PopularComplitation value={value} movie={movie} />
-                                        <ComedyComplitation value={value} movie={movie}/>
+                                        <PopularComplitation movie={movie} />
+                                        <ComedyComplitation movie={movie}/>
                                     </>
                     }
                 </div>
