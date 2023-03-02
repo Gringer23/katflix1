@@ -1,11 +1,11 @@
 import {Link} from "react-router-dom";
 import style from "./LoginPage.module.scss";
-import logoKatFlix from "../../../images/katflix.png";
+import logoKatFlix from "../../../assets/images/katflix.png";
 import {useForm} from "react-hook-form";
 import {useContext, useEffect, useState} from "react";
-import {CustomContext} from "../../../Context";
+import {CustomContext} from "../../../context/Context";
 import PulseLoader from "react-spinners/PulseLoader";
-import backImg from "../../../images/films.jpg";
+import backImg from "../../../assets/images/films.jpg";
 
 
 const LoginPage = () => {

@@ -1,7 +1,7 @@
 import {useRef, useState} from "react";
 import style from "./Complitation.module.scss"
 import {Link} from "react-router-dom";
-import Button from "../../UI/Button/Button";
+import Button from "../../components/UI/Button/Button";
 
 const ComedyComplitation = ( {movie}) => {
 
@@ -46,7 +46,7 @@ const ComedyComplitation = ( {movie}) => {
                                         genreFilter.map(film =>
                                             <div key={film.id} className={style.filmLib}
                                                  style={{transform: `translateX(${offset}px)`}}>
-                                                <Link to={`film/${film.id}/${film.name}`}>
+                                                <Link to={`/film/${film.id}/${film.name}`}>
                                                     <div key={film.id} className={style.main}
                                                          style={{backgroundImage: `url(${film.mainImage})`, width: '350px'}}>
                                                         <div className={style.rating}

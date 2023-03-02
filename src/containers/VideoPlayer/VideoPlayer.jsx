@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import Header from "../../elements/Header/Header";
+import Header from "../Header/Header";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import ReactPlayer from "react-player";
@@ -26,7 +26,7 @@ const VideoPlayer = () => {
 
     return(
        <>
-           <ReactPlayer url={`${video}`} width='100%' height='630px' controls={true} playing={false} volume={0.5} pip={true} onEnded={() => nav(-1)}>
+           <ReactPlayer url={`${video}`} width='100%' height='700px' controls={true} playing={false} volume={0.5} pip={true} onEnded={() => nav(-1)}>
            </ReactPlayer>
        </>
     )

@@ -1,6 +1,6 @@
 import style from './Profile.module.scss'
 import {useContext} from "react";
-import {CustomContext} from "../../../Context";
+import {CustomContext} from "../../../context/Context";
 import Avatar from "../../UI/Avatar/Avatar";
 
 const Profile = ({sideBar, setSideBar}) => {

@@ -1,7 +1,7 @@
 import {useNavigate, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Header from "../../elements/Header/Header";
+import Header from "../Header/Header";
 import ReactPlayer from "react-player";
 
 

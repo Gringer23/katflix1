@@ -2,7 +2,7 @@ import style from './NavigationBottom.module.scss'
 import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {useParams} from "react-router-dom";
-import {CustomContext} from "../../../Context";
+import {CustomContext} from "../../../context/Context";
 
 const tabs = [
     {

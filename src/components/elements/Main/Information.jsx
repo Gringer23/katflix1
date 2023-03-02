@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {setFilmToFavorite , removeFilmFromFavorite} from "../../../store/action";
 import {useContext} from "react";
-import {CustomContext} from "../../../Context";
+import {CustomContext} from "../../../context/Context";
 
 
 const Information = ({movie, favoriteFilm, setFavoriteFilm}) => {

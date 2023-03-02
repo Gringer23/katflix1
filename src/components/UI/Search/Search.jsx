@@ -2,7 +2,7 @@ import style from './Search.module.scss'
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import the from '../../../images/logo_tlou.png'
+import the from '../../../assets/images/logo_tlou.png'
 
 const Search = () =>{
 
@@ -36,7 +36,8 @@ const Search = () =>{
 
     return (
         <div>
-        <div className={style.search}>
+        <div className={style.search}
+        style={{width: value ? '115%': '', borderRadius: value ? '10px': ''}}>
             <div>
                 <i className='bx bx-search-alt'></i>
                 <input type='text' placeholder='Я ищу...'

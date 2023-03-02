@@ -29,7 +29,7 @@ export const Context = (props) =>{
                 if(password === passwordConfirm){
                     localStorage.setItem('user', JSON.stringify(res.data.user))
                     setUser(res.data.user);
-                    nav('/');
+                    nav('/main');
                 }
                 setIsError('Пароли не совпададют');
             });
@@ -40,7 +40,7 @@ export const Context = (props) =>{
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user))
                 setUser(res.data.user);
-                nav('/')
+                nav('/main')
             })
     }
 

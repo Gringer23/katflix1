@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {CustomContext} from "../../../Context";
+import {CustomContext} from "../../../context/Context";
 import style from './Avatar.module.scss';
 
 

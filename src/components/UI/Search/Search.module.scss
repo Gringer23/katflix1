@@ -1,13 +1,14 @@
-@import '../../../_variables';
+@import '../../../assets/variables';
 
 .search{
-  margin-left: 8rem;
+  margin-left: 3.5rem;
   display: flex;
   align-items: center;
-  border-radius: 20px;
   background-color: #000;
   border: 1px solid rgba($gray, 0.4);
   padding: 0.5rem 1rem;
+  justify-content: space-between;
+  transition: .7s all;
 
   > div {
     display: flex;
@@ -35,7 +36,7 @@
     padding: 5px;
     box-shadow: 10px 10px 20px black;
     z-index: 99;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid #575757;
     max-height: 240px;
     height: auto;

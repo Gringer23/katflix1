@@ -1,10 +1,10 @@
-import Search from "../../UI/Search/Search";
+import Search from "../../components/UI/Search/Search";
 import style from './Header.module.scss'
-import Profile from "../Profile/Profile";
-import logoKatFlix from "../../../images/katflix.png"
+import Profile from "../../components/elements/Profile/Profile";
+import logoKatFlix from "../../assets/images/katflix.png"
 import {Link} from "react-router-dom";
 import {useContext, useState} from "react";
-import {CustomContext} from "../../../Context";
+import {CustomContext} from "../../context/Context";
 
 
 const Header = () =>{

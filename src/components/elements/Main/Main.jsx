@@ -1,11 +1,11 @@
-import Sidebar from "../../UI/SideBar/Sidebar";
+import Sidebar from "../../../containers/SideBar/Sidebar";
 import Information from "./Information";
 import NavigationBottom from "../../UI/NavigationBottom/NavigationBottom";
 import {useEffect, useState} from "react";
 import style from './Main.module.scss'
-import Episodes from "../Episodes/Episodes";
-import Details from "../Details/Details";
-import Header from "../Header/Header";
+import Episodes from "../../../containers/Episodes/Episodes";
+import Details from "../../../containers/Details/Details";
+import Header from "../../../containers/Header/Header";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import {useSelector} from "react-redux";

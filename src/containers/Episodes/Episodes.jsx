@@ -1,5 +1,5 @@
 import style from './Episodes.module.scss'
-import Button from "../../UI/Button/Button";
+import Button from "../../components/UI/Button/Button";
 import {useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
 

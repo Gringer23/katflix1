@@ -1,18 +1,18 @@
 import styles from './MainIndex.module.scss';
-import Header from "../Header/Header";
-import Sidebar from "../../UI/SideBar/Sidebar";
+import Header from "../../../containers/Header/Header";
+import Sidebar from "../../../containers/SideBar/Sidebar";
 import {useEffect, useState} from "react";
-import ComedyComplitation from "../Complitation/ComedyComplitation";
-import PopularComplitation from "../Complitation/PopularComplitation";
+import ComedyComplitation from "../../../containers/Complitation/ComedyComplitation";
+import PopularComplitation from "../../../containers/Complitation/PopularComplitation";
 import axios from "axios";
 import PulseLoader from "react-spinners/PulseLoader";
+import the from '../../../assets/images/theLastOfUs.jpg';
 
 
 const MainIndex = () => {
 
     const [movie, setMovie] = useState([]);
     const [sideBar, setSideBar] = useState(false);
-
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
         // Пока остаются элементы для перемешивания.
@@ -28,6 +28,7 @@ const MainIndex = () => {
         return array;
     }
 
+    console.log(the);
     useEffect(() => {
         axios.get('http://localhost:3001/Data').then((res) => {
             const rand = shuffle(res.data);
