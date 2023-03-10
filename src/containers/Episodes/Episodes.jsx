@@ -55,8 +55,8 @@ const Episodes = ({movie, id}) => {
                             <div key={photo.id} style={{ transform: `translateX(${offset}px)`}} className={style.episode_translition}>
                             <Link to={`/watch/${movie.name}/${photo.id}`}>
                             <div className={style.episodePreview}>
-                                <img src={photo.source} width='350' alt={photo.id} height='200px' />
-                                <span className={style.episodeDescription}>{movie.rusName} {photo.id+ ' серия'}</span>
+                                <img src={photo.source} width='350' alt={photo.id} height='200px' className={style.episodeImg}/>
+                                <span className={style.episodeDescription}>{movie.rusName} {photo.id + ' серия'}</span>
                             </div>
                             </Link>
                             </div>

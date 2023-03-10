@@ -59,13 +59,15 @@
         transition: 0.8s;
         color: $gray;
         margin-left: 2rem;
-
       }
 
       .episodePreview:hover {
         transform: scale(1.1);
         color: #fff;
 
+      }
+      .episodeImg{
+        border-radius: 20px;
       }
 
       .episodeDescription {

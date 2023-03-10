@@ -6,7 +6,6 @@ import ComedyComplitation from "../../../containers/Complitation/ComedyComplitat
 import PopularComplitation from "../../../containers/Complitation/PopularComplitation";
 import axios from "axios";
 import PulseLoader from "react-spinners/PulseLoader";
-import the from '../../../assets/images/theLastOfUs.jpg';
 
 
 const MainIndex = () => {
@@ -16,7 +15,7 @@ const MainIndex = () => {
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
         // Пока остаются элементы для перемешивания.
-        while (currentIndex != 0) {
+        while (currentIndex !== 0) {
             // Выбираем оставшийся элемент.
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
@@ -28,7 +27,6 @@ const MainIndex = () => {
         return array;
     }
 
-    console.log(the);
     useEffect(() => {
         axios.get('http://localhost:3001/Data').then((res) => {
             const rand = shuffle(res.data);

@@ -2,7 +2,6 @@ import style from './Search.module.scss'
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import the from '../../../assets/images/logo_tlou.png'
 
 const Search = () =>{
 
@@ -11,7 +10,7 @@ const Search = () =>{
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
         // Пока остаются элементы для перемешивания.
-        while (currentIndex != 0) {
+        while (currentIndex !== 0) {
             // Выбираем оставшийся элемент.
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;

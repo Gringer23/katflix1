@@ -16,7 +16,7 @@ const Header = () =>{
        <div className={style.header__fixed}>
        <div className={style.header}>
            <div>
-               <Link to="/">
+               <Link to="/main">
                    <img src={logoKatFlix}
             alt="Katflix"
             height='35'

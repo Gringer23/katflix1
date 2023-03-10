@@ -8,9 +8,10 @@ import img1 from '../../../assets/images/joker.jpg';
 import img2 from '../../../assets/images/spider-man.jpg';
 import img3 from '../../../assets/images/chernobyl.jpg';
 import {Link} from "react-router-dom";
+import video1 from '../../../assets/video/ACRAZE - Do It To It (ft. Cherish) - (Official Lyric Video) (720p).mp4';
+import video2 from '../../../assets/video/Eminem - Without Me (Official Music Video).mp4';
 
 const IndexPage = () => {
-
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     const refLeft = useRef([]);
     const refRight = useRef([]);
@@ -76,7 +77,7 @@ const IndexPage = () => {
             <div className="content">
 
                 <header className={style.wrapper}>
-                    <img data-speed={.6} src={img} className={style.hero_img}/>
+                    <img data-speed={.6} src={img} className={style.hero_img} alt=""/>
                 <div className={style.container}>
                     <div data-speed={.75} className={style.main_header}>
                         <Link to={'/main'}><h1 className={style.main_title}>KATFLIX</h1></Link>
@@ -88,9 +89,9 @@ const IndexPage = () => {
                     <div className={style.container}>
                         <div className={style.gallery}>
                             <div data-speed={.8} className={style.gallery__left}>
-                                <img className={style.gallery__item} src={img1} ref={addToRefLeft}/>
+                                <img className={style.gallery__item} src={img1} ref={addToRefLeft} alt=""/>
                                 <p className={`${style.gallery__item } ${style.text_block__p}`} ref={addToRefLeft}>Устройте кинотеатр у себя дома! Смотрите онлайн фильмы хорошего качества в приятной домашней обстановке и в удобное для вас время. </p>
-                                <img className={style.gallery__item} src={img3} height='50%' ref={addToRefLeft}/>
+                                <img className={style.gallery__item} src={img3} height='50%' ref={addToRefLeft} alt=""/>
                             </div>
                             <div className={style.gallery__right}>
                                 <div className={`${style.gallery__item} ${style.text_block}`} ref={addToRefRight}>
@@ -99,10 +100,10 @@ const IndexPage = () => {
                                     </h2>
                                     <p className={style.text_block__p}>Всегда есть что посмотреть. Новые серии в день выхода и тысячи фильмов на вечер. Без рекламы, в хорошем качестве, с любимой озвучкой или в оригинале.</p>
                                 </div>
-                                    <img className={style.gallery__item} src={img2} ref={addToRefRight}/>
+                                    <img className={style.gallery__item} src={img2} ref={addToRefRight} alt=""/>
                                 <div className={style.gallery__item } ref={addToRefRight} style={{marginTop: '2rem'}}>
                                     <Link to={'/main'}>
-                                   <span className={style.text_block__button}> Перейти к просмотру</span>
+                                   <button className={style.text_block__button}> Перейти к просмотру</button>
                                     </Link>
                                 </div>
                             </div>
